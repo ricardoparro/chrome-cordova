@@ -10,6 +10,12 @@ rfduino.discover = function (seconds, successCallback, failureCallback) {
 	return devices;
 };
 
+rfduino.connect = function (uuid, connectSuccess, connectFailure){
+
+	//define connect
+
+};
+
 
 
 window.rfduino = rfduino;
