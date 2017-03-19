@@ -10,9 +10,9 @@ rfduino.discover = function (seconds, successCallback, failureCallback) {
 	return devices;
 };
 
-rfduino.connect = function (uuid, connectSuccess, connectFailure){
+rfduino.connect = function (uuid, successCallback, failureCallback){
 
-	//define connect
+	successCallback(console.log("successCallback"));
 
 };
 
