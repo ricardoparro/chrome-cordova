@@ -20,43 +20,34 @@ rfduino.discover = function (seconds, successCallback, failureCallback) {
     return devices;
 };
 
-rfduino.connect = function (result) {
-    var promise = new Promise(function(resolve, reject) {
-        if (result) {
-            resolve(true);
-        }
-        else {
-            reject(Error(false));
-        }
-    });
+rfduino.connect = function (success, failure, mockValue) {
+    
+    if (mockValue) {
+        success();
+    }
+    else {
+        failure();
+    }
+}
+    
 
-    return promise;
-};
+rfduino.isEnabled = function (success, failure, mockValue) {
+    
+    if (mockValue) {
+        success();
+    }
+    else {
+        failure();
+    }
+}
 
-rfduino.isEnabled = function (result) {
-    var promise = new Promise(function(resolve, reject) {
-        if (result) {
-            resolve(true);
-        }
-        else {
-            reject(Error(false));
-        }
-    });
-
-    return promise;
-};
-
-rfduino.isConnected = function (result) {
-    var promise = new Promise(function(resolve, reject) {
-        if (result) {
-            resolve(true);
-        }
-        else {
-            reject(Error(false));
-        }
-    });
-
-    return promise;
+rfduino.isConnected = function (success, failure, mockValue) {
+    if (mockValue) {
+        success();
+    }
+    else {
+        failure();
+    }
 };
 
 rfduino.checkBattery = function (result) {
