@@ -10,8 +10,13 @@ var rfduino = {};
 
 rfduino.write = function(data, successCallback, failureCallback){
 
-    var returnString = '4,0020,L,R,103,1024,v10/0';
-    return returnString;
+    if(data[0] == "34 2c 4c 2c 52 2c 31 35 34 2c 30 33 30 30 2c 2d 2f 30"){
+        successCallback("success");
+    }
+
+    if(data[0] == "30 2c 2f 30"){
+        successCallback("success");
+    }
 }
 
 rfduino.discover = function (seconds, successCallback, failureCallback) {
